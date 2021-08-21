@@ -1,6 +1,6 @@
-package com.learn.thinking.in.spring.ioc.overview.dependency.lookup.domain;
+package com.learn.thinking.in.spring.ioc.overview.domain;
 
-import com.learn.thinking.in.spring.ioc.overview.dependency.lookup.anotation.Super;
+import com.learn.thinking.in.spring.ioc.overview.annotation.Super;
 
 /**
  * Project: thinking-in-spring
@@ -13,7 +13,7 @@ import com.learn.thinking.in.spring.ioc.overview.dependency.lookup.anotation.Sup
  * @date 2021/8/22 0022 0:08
  */
 @Super
-public class SuperUser  extends  User{
+public class SuperUser  extends User {
     private String address;
 
     public String getAddress() {

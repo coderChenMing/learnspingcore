@@ -1,4 +1,4 @@
-package com.learn.thinking.in.spring.ioc.overview.dependency.lookup.domain;
+package com.learn.thinking.in.spring.ioc.overview.domain;
 
 /**
  * Project: thinking-in-spring

@@ -9,21 +9,21 @@
         https://www.springframework.org/schema/context/spring-context.xsd">
 
     <!--    <context:annotation-config/>-->
-    <bean id="user" class="com.learn.thinking.in.spring.ioc.overview.dependency.lookup.domain.User">
+    <bean id="user" class="com.learn.thinking.in.spring.ioc.overview.domain.User">
         <property name="id" value="1"/>
         <property name="name" value="zhangsan"/>
     </bean>
-    <bean id="user2" class="com.learn.thinking.in.spring.ioc.overview.dependency.lookup.domain.User">
+    <bean id="user2" class="com.learn.thinking.in.spring.ioc.overview.domain.User">
         <property name="id" value="2"/>
         <property name="name" value="lisi"/>
     </bean>
-    <bean id="user3" class="com.learn.thinking.in.spring.ioc.overview.dependency.lookup.domain.SuperUser">
+    <bean id="user3" class="com.learn.thinking.in.spring.ioc.overview.domain.SuperUser">
         <property name="id" value="3"/>
         <property name="name" value="wangwu"/>
         <property name="address" value="beijing"/>
     </bean>
     <!--primary 属性:主要和其他,true 标记为主要,会优先返回,忽略其他-->
-    <bean id="user4" class="com.learn.thinking.in.spring.ioc.overview.dependency.lookup.domain.SuperUser" parent="user" primary="true">
+    <bean id="user4" class="com.learn.thinking.in.spring.ioc.overview.domain.SuperUser" parent="user" primary="true">
         <property name="address" value="shanghai"/>
     </bean>
 
