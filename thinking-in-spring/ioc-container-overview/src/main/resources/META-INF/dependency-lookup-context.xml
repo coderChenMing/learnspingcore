@@ -8,9 +8,30 @@
         http://www.springframework.org/schema/context
         https://www.springframework.org/schema/context/spring-context.xsd">
 
-<!--    <context:annotation-config/>-->
+    <!--    <context:annotation-config/>-->
+    <bean id="user" class="com.learn.thinking.in.spring.ioc.overview.dependency.lookup.domain.User">
+        <property name="id" value="1"/>
+        <property name="name" value="zhangsan"/>
+    </bean>
+    <bean id="user2" class="com.learn.thinking.in.spring.ioc.overview.dependency.lookup.domain.User">
+        <property name="id" value="2"/>
+        <property name="name" value="lisi"/>
+    </bean>
+    <bean id="user3" class="com.learn.thinking.in.spring.ioc.overview.dependency.lookup.domain.SuperUser">
+        <property name="id" value="3"/>
+        <property name="name" value="wangwu"/>
+        <property name="address" value="beijing"/>
+    </bean>
+    <!--primary 属性:主要和其他,true 标记为主要,会优先返回,忽略其他-->
+    <bean id="user4" class="com.learn.thinking.in.spring.ioc.overview.dependency.lookup.domain.SuperUser" parent="user" primary="true">
+        <property name="address" value="shanghai"/>
+    </bean>
 
-<!--    <context:component-scan base-package="org.acme" />-->
+    <bean id="objectFactoryCreatingFactoryBean"
+          class="org.springframework.beans.factory.config.ObjectFactoryCreatingFactoryBean">
+        <property name="targetBeanName" value="user"/>
+    </bean>
+    <!--    <context:component-scan base-package="org.acme" />-->
 
     <!-- Root BeanDefinition 不需要合并，不存在 parent -->
     <!-- 普通 beanDefinition GenericBeanDefinition -->
@@ -19,8 +40,6 @@
     <!-- 普通 beanDefinition GenericBeanDefinition -->
     <!-- 合并后 GenericBeanDefinition 变成 RootBeanDefinition，并且覆盖 parent 相关配置-->
     <!-- primary = true , 增加了一个 address 属性 -->
-
-
 
 
 </beans>
