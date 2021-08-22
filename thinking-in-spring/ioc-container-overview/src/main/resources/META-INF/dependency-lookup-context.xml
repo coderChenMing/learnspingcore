@@ -17,17 +17,18 @@
         <property name="id" value="2"/>
         <property name="name" value="lisi"/>
     </bean>
-    <bean id="user3" class="com.learn.thinking.in.spring.ioc.overview.domain.SuperUser">
+    <bean id="superUser1" class="com.learn.thinking.in.spring.ioc.overview.domain.SuperUser">
         <property name="id" value="3"/>
         <property name="name" value="wangwu"/>
         <property name="address" value="beijing"/>
     </bean>
     <!--primary 属性:主要和其他,true 标记为主要,会优先返回,忽略其他-->
-    <bean id="user4" class="com.learn.thinking.in.spring.ioc.overview.domain.SuperUser" parent="user" primary="true">
+    <bean id="superUser2" class="com.learn.thinking.in.spring.ioc.overview.domain.SuperUser" parent="user"
+          primary="true">
         <property name="address" value="shanghai"/>
     </bean>
 
-    <bean id="objectFactoryCreatingFactoryBean"
+    <bean id="objectFactory"
           class="org.springframework.beans.factory.config.ObjectFactoryCreatingFactoryBean">
         <property name="targetBeanName" value="user"/>
     </bean>

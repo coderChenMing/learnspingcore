@@ -71,7 +71,7 @@ public class DependencyLookUpDemo {
 
     public static void lookupInLazyTime(BeanFactory beanFactory) {
         // spring 3.0之前不支持泛型的
-        ObjectFactory<User> objectFactory = (ObjectFactory<User>) beanFactory.getBean("objectFactoryCreatingFactoryBean");
+        ObjectFactory<User> objectFactory = (ObjectFactory<User>) beanFactory.getBean("objectFactory");
         User user = objectFactory.getObject();
         System.out.println("按照姓名/id延时查找: "+user);
 
